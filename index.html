@@ -4,12 +4,226 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Power BI Projects</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 60px 20px;
+      font-family: Arial, sans-serif;
+      background-color: #b8c2ce;
+      color: #253448;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .page-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .image-placeholder {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background-color: #d2dae4;
+      border: 2px dashed #738397;
+      border-radius: 12px;
+      color: #45566c;
+      font-size: 12px;
+      font-weight: normal;
+    }
+
+    .title-image {
+      width: 72px;
+      height: 72px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 4vw, 36px);
+    }
+
+    .subtitle {
+      margin: 0 0 32px;
+      color: #405269;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      background-color: #e4e9ef;
+      border: 1px solid #8f9eb0;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(37, 52, 72, 0.12);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    caption {
+      padding: 18px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    thead {
+      background-color: #52647b;
+      color: #ffffff;
+    }
+
+    th,
+    td {
+      padding: 22px;
+      vertical-align: middle;
+    }
+
+    thead th:first-child {
+      width: 45%;
+    }
+
+    tbody tr + tr {
+      border-top: 1px solid #b7c2cf;
+    }
+
+    tbody tr:hover {
+      background-color: #d7dfe9;
+    }
+
+    .project {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .project-image {
+      width: 64px;
+      height: 64px;
+    }
+
+    .project a {
+      color: #244c76;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    .project a:focus-visible {
+      outline: 3px solid #244c76;
+      outline-offset: 5px;
+    }
+
+    .description {
+      line-height: 1.6;
+      color: #405269;
+    }
+
+    /* Use these styles when replacing placeholders with images. */
+    img.title-image,
+    img.project-image {
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 32px 12px;
+      }
+
+      .page-title {
+        flex-direction: column;
+      }
+
+      th,
+      td {
+        padding: 14px;
+      }
+
+      .project {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Power BI Project Library</h1>
-  <p>Select a Project</p>
-  <ul>
-    <li><a href="RetailKPIAnalysis.html">Retail KPI Analysis</a></li>
-  </ul>
+  <main class="container">
+    <header>
+      <div class="page-title">
+        <!-- Replace with:         -->
+        <img class="title-image" src="images/Logo.jpg" alt="">
+        <span class="image-placeholder title-image" aria-hidden="true">
+          Logo
+        </span>
+
+        <h1>Power BI Project Library</h1>
+      </div>
+
+      <p class="subtitle">Select a project to explore its interactive report.</p>
+    </header>
+
+    <div class="table-wrapper">
+      <table>
+        <caption>Available Projects</caption>
+
+        <thead>
+          <tr>
+            <th scope="col">Project Name</th>
+            <th scope="col">Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row">
+              <div class="project">
+                <!-- Replace with:                 -->
+                <img class="project-image"
+                     src="images/Retail%20Store%20Insights.png"
+                     alt="">
+
+                <span class="image-placeholder project-image"
+                      aria-hidden="true">
+                  Image
+                </span>
+
+                <a href="RetailKPIAnalysis.html">
+                  Retail KPI Analysis
+                </a>
+              </div>
+            </th>
+
+            <td class="description">
+              Add a brief description of your Retail KPI Analysis
+              project here.
+            </td>
+          </tr>
+
+          <!-- Add more project rows here. -->
+        </tbody>
+      </table>
+    </div>
+  </main>
 </body>
 </html>
