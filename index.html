@@ -236,6 +236,46 @@
             </td>
           </tr>
 
+          <tr>
+            <th scope="row">
+              <div class="project">
+                <!-- Replace with:
+                -->
+				<img class="project-image"
+					 src="Images/Stock%20Prices.png"
+					 alt="" aria-hidden="true">
+
+                <a href="StockPriceAnalysis.html">
+                  Stock Prices Analysis
+                </a>
+              </div>
+            </th>
+
+            <td class="description">
+				<p>
+				  Analyzed stock price trends over a rolling 52-week period, highlighting
+				  50-day and 200-day moving averages and each company’s highest and lowest
+				  closing prices.
+				</p>
+
+				<p><strong>Key Challenges and Solutions</strong></p>
+				<ol>
+				  <li>
+					<strong>Maintaining accurate moving averages</strong>
+					Used the DAX <code>WINDOW</code> function within <code>CALCULATE</code>
+					to include historical prices beyond the displayed period. A separate
+					measure limited the visual to the latest 52 weeks while preserving
+					the data needed for the calculations.
+				  </li>
+				  <li>
+					<strong>Highlighting Maximum and Minimum values in the visual</strong>
+					Created a dedicated DAX measure to display only each company’s maximum
+					and minimum closing prices within the visible 52-week period.
+				  </li>
+				</ol>
+            </td>
+          </tr>
+
           <!-- Add more project rows here. -->
         </tbody>
       </table>
@@ -243,3 +283,4 @@
   </main>
 </body>
 </html>
+
