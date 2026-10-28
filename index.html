@@ -1,286 +1,861 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marul's Power BI Projects</title>
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <title>Marul's Data Analytics Portfolio</title>
+      <style>
+         :root {
+            --ink: #192e3c;
+            --muted: #586c79;
+            --line: #dce5e9;
+            --teal: #086e68;
+         }
+         * {
+            box-sizing: border-box;
+         }
+         body {
+            margin: 0;
+            background: #f5f7f8;
+            color: var(--ink);
+            font:
+               15px/1.6 system-ui,
+               sans-serif;
+         }
+         a {
+            color: inherit;
+         }
+         header {
+            background: white;
+            border-bottom: 1px solid var(--line);
+         }
+         .bar,
+         main {
+            max-width: 1280px;
+            margin: auto;
+            padding: 20px 25px;
+         }
+         .bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+         }
+         .brand {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            font-weight: 650;
+         }
+         .brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 9px;
+         }
+         .bar > a,
+         footer a {
+            font-size: 12px;
+            color: var(--muted);
+            text-decoration: none;
+         }
+         main {
+            padding-top: 10px;
+            padding-bottom: 20px;
+         }
+         .eyebrow {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 750;
+            color: var(--teal);
+         }
+         h1 {
+            font-size: 28px;
+            line-height: 1.2;
+            letter-spacing: -0.04em;
+            margin: 8px 0 12px;
+         }
+         .intro {
+            color: var(--muted);
+            margin: 0;
+         }
+         .tools {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin: 28px 0 20px;
+         }
+         .filters {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+         }
+         button,
+         input {
+            font: inherit;
+            border: 1px solid var(--line);
+            border-radius: 7px;
+            background: white;
+            padding: 8px 14px;
+            font-size: 13px;
+            color: var(--muted);
+         }
+         button {
+            cursor: pointer;
+         }
+         button[aria-pressed="true"] {
+            color: white;
+            background: var(--ink);
+            border-color: var(--ink);
+         }
+         input {
+            width: 290px;
+         }
+         .collection {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--line);
+            padding: 16px 0;
+            align-items: center;
+         }
+         .collection h2 {
+            font-size: 15px;
+            margin: 0;
+         }
+         .collection span {
+            font-size: 12px;
+            color: var(--muted);
+         }
+         .grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 20px;
+            align-items: start;
+         }
+         .card {
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px #182a3805;
+         }
+         .preview {
+            display: block;
+            height: 140px;
+            padding: 12px;
+            background: #eef2f4;
+            border-bottom: 1px solid var(--line);
+         }
+         .preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+         }
+         .body {
+            padding: 20px;
+         }
+         .category {
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--teal);
+            font-weight: 750;
+         }
+         h3 {
+            font-size: 20px;
+            line-height: 1.3;
+            letter-spacing: -0.025em;
+            margin: 8px 0 12px;
+         }
+         h3 a {
+            text-decoration: none;
+         }
+         h3 a:hover {
+            text-decoration: underline;
+         }
+         .description {
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--muted);
+            min-height: 0;
+            margin: 0 0 10px;
+         }
+         .tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+         }
+         .tags span {
+            font-size: 10px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: #eef5f4;
+            color: #43635f;
+         }
+         .report {
+            border-top: 1px solid var(--line);
+            padding-top: 14px;
+            display: flex;
+            justify-content: space-between;
+            color: var(--teal);
+            font-size: 13px;
+            font-weight: 650;
+            text-decoration: none;
+         }
+         .report:hover {
+            text-decoration: underline;
+         }
+         details {
+            border-top: 1px solid var(--line);
+            margin-top: 15px;
+            padding-top: 12px;
+            font-size: 12px;
+            color: var(--muted);
+         }
+         summary {
+            color: var(--ink);
+            font-weight: 600;
+            cursor: pointer;
+         }
+         details p {
+            margin: 10px 0 0;
+         }
+         code {
+            background: #eef3f4;
+            padding: 1px 3px;
+            border-radius: 3px;
+         }
+         .empty {
+            padding: 32px;
+            text-align: center;
+            border: 1px dashed var(--line);
+            color: var(--muted);
+         }
+         footer {
+            margin-top: 36px;
+            padding-top: 18px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+         }
+         :focus-visible {
+            outline: 3px solid #28a49c;
+            outline-offset: 3px;
+         }
+         [hidden] {
+            display: none !important;
+         }
+         @media (min-width: 1600px) {
+            .bar,
+            main {
+               max-width: 1480px;
+            }
+            .grid {
+               grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+         }
+         @media (max-width: 1000px) {
+            .grid {
+               grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+         }
+         @media (max-width: 620px) {
+            .bar,
+            main {
+               padding-left: 20px;
+               padding-right: 20px;
+            }
+            .bar > a {
+               display: none;
+            }
+            h1 {
+               font-size: 25px;
+            }
+            .grid {
+               grid-template-columns: 1fr;
+            }
+            .search,
+            input {
+               width: 100%;
+            }
+            .description {
+               min-height: 0;
+            }
+            footer {
+               flex-direction: column;
+               gap: 8px;
+            }
+         }
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      padding: 60px 20px;
-      font-family: "Trebuchet MS", sans-serif;
-      background-color: #b8c2ce;
-      color: #253448;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1000px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .page-title {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 18px;
-      margin-bottom: 16px;
-    }
-
-    .image-placeholder {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      background-color: #d2dae4;
-      border: 2px dashed #738397;
-      border-radius: 12px;
-      color: #45566c;
-      font-size: 12px;
-      font-weight: normal;
-    }
-
-    .title-image {
-      width: 72px;
-      height: 72px;
-    }
-
-	h1 {
-	  margin: 0;
-	  font-size: 20px;
-	  font-family: "Trebuchet MS", sans-serif;
-	}
-
-    .subtitle {
-      margin: 0 0 16px;
-      color: #405269;
-    }
-
-    .table-wrapper {
-      overflow-x: auto;
-      background-color: #e4e9ef;
-      border: 1px solid #8f9eb0;
-      border-radius: 14px;
-      box-shadow: 0 8px 24px rgba(37, 52, 72, 0.12);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    caption {
-      padding: 18px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    thead {
-      background-color: #52647b;
-      color: #ffffff;
-    }
-
-    th,
-    td {
-      padding: 5px;
-      vertical-align: middle;
-    }
-
-    thead th:first-child {
-      width: 40%;
-    }
-
-    thead th {
-      text-align: center;
-    }	
-		  
-    tbody tr + tr {
-      border-top: 1px solid #b7c2cf;
-    }
-
-    tbody tr:hover {
-      background-color: #d7dfe9;
-    }
-
-    .project {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .project-image {
-      width: 64px;
-      height: 64px;
-    }
-
-    .project a {
-      color: #244c76;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .project a:hover {
-      text-decoration: underline;
-    }
-
-    .project a:focus-visible {
-      outline: 3px solid #244c76;
-      outline-offset: 5px;
-    }
-
-    .description {
-      line-height: 1.0;
-      color: #405269;
-    }
-
-    /* Use these styles when replacing placeholders with images. */
-    img.title-image,
-    img.project-image {
-      object-fit: cover;
-      border-radius: 12px;
-      flex-shrink: 0;
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 32px 12px;
-      }
-
-      .page-title {
-        flex-direction: column;
-      }
-
-      th,
-      td {
-        padding: 14px;
-      }
-
-      .project {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <main class="container">
-    <header>
-      <div class="page-title">
-        <!-- Replace with:
-        -->
-		<img class="title-image" src="Images/Logo.jpg" alt="" aria-hidden="true">
-
-        <h1>Marul's Power BI Project Library</h1>
-      </div>
-
-      <p class="subtitle">Select a project to explore its interactive report.</p>
-    </header>
-
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">Project Name</th>
-            <th scope="col">Description</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <th scope="row">
-              <div class="project">
-                <!-- Replace with:
-                -->
-				<img class="project-image"
-					 src="Images/Retail%20Store%20Insights.png"
-					 alt="" aria-hidden="true">
-
-                <a href="RetailKPIAnalysis.html">
-                  Retail KPI Analysis
-                </a>
-              </div>
-            </th>
-
-            <td class="description">
-              Understanding the performance of Retail Store chain using leading KPIs like Net Revenue per Customer, Product Return rate, Customer Acquistion rate etc. Python was used to normalize the Sample Superstore dataset before building a relational model and dashboard in Power BI.
-            </td>
-          </tr>
-
-          <tr>
-            <th scope="row">
-              <div class="project">
-                <!-- Replace with:
-                -->
-				<img class="project-image"
-					 src="Images/Customer%20Opportunity.png"
-					 alt="" aria-hidden="true">
-
-                <a href="CustomerOpportunity.html">
-                  Customer Opportunity Analysis
-                </a>
-              </div>
-            </th>
-
-            <td class="description">
-              Analyzed customer service opportunities and actual sales data of a manufacturer and identified gaps in service opportunity capture, conversion, and customer engagement. Formulated recommendations to support data-driven sales strategies and service revenue growth.
-            </td>
-          </tr>
-
-          <tr>
-            <th scope="row">
-              <div class="project">
-                <!-- Replace with:
-                -->
-				<img class="project-image"
-					 src="Images/Stock%20Prices.png"
-					 alt="" aria-hidden="true">
-
-                <a href="StockPriceAnalysis.html">
-                  Stock Prices Analysis
-                </a>
-              </div>
-            </th>
-
-            <td class="description">
-				<p>
-				  Analyzed stock price trends over a rolling 52-week period, highlighting
-				  50-day and 200-day moving averages and each company’s highest and lowest
-				  closing prices.
-				</p>
-
-				<p><strong>Key Challenges and Solutions</strong></p>
-				<ol>
-				  <li>
-					<strong>Maintaining accurate moving averages</strong>
-					Used the DAX <code>WINDOW</code> function within <code>CALCULATE</code>
-					to include historical prices beyond the displayed period. A separate
-					measure limited the visual to the latest 52 weeks while preserving
-					the data needed for the calculations.
-				  </li>
-				  <li>
-					<strong>Highlighting Maximum and Minimum values in the visual</strong>
-					Created a dedicated DAX measure to display only each company’s maximum
-					and minimum closing prices within the visible 52-week period.
-				  </li>
-				</ol>
-            </td>
-          </tr>
-
-          <!-- Add more project rows here. -->
-        </tbody>
-      </table>
-    </div>
-  </main>
-</body>
+         .illustration {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #e8f2f1;
+            color: #1b706a;
+            padding: 18px 22px;
+         }
+         .illustration svg {
+            width: 100%;
+            height: 65px;
+            position: absolute;
+            left: 0;
+            top: 30px;
+            opacity: 0.5;
+         }
+         .visual-label {
+            font-size: 10px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            font-weight: 700;
+         }
+         .visual-title {
+            font-size: 15px;
+            font-weight: 650;
+            position: relative;
+            max-width: 85%;
+            line-height: 1.3;
+         }
+         .risk {
+            background: #f1edf6;
+            color: #72588c;
+         }
+         .travel {
+            background: #eaf0f8;
+            color: #3a6890;
+         }
+         .nature {
+            background: #edf2e8;
+            color: #5d7950;
+         }
+         .waterfall {
+            background: #f6eee3;
+            color: #98713a;
+         }
+         .game {
+            background: #ebedf8;
+            color: #5c65a0;
+         }
+         .unavailable {
+            color: var(--muted);
+            font-weight: 400;
+            font-size: 12px;
+         }
+         .category {
+            min-height: 32px;
+         }
+         .description {
+            min-height: 0;
+            margin-bottom: 10px;
+         }
+         .tools {
+            align-items: center;
+         }
+         .filters button {
+            padding: 8px 11px;
+         }
+         .grid {
+            row-gap: 24px;
+         }
+         @media (max-width: 620px) {
+            .description {
+               min-height: 0;
+            }
+            .category {
+               min-height: 0;
+            }
+         }
+         .code-link {
+            margin-top: 12px;
+            padding-top: 12px;
+            font-weight: 500;
+         }
+      </style>
+   </head>
+   <body>
+      <header>
+         <div class="bar">
+            <div class="brand">
+               <img
+                  src="https://marulsnesamony.github.io/Metrics-n-Insights/Images/Logo.jpg"
+                  alt=""
+               />
+               <div>
+                  Marul Nesamony
+                  <div class="eyebrow">Data analytics portfolio</div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <main>
+         <h1>A closer look at the data</h1>
+         <p class="intro">
+            Explore interactive reports, business insights, and the thinking
+            behind each project.
+         </p>
+         <div class="tools">
+            <div
+               class="filters"
+               role="group"
+               aria-label="Filter projects by analytical focus"
+            >
+               <button data-filter="all" aria-pressed="true">
+                  All projects</button
+               ><button data-filter="business" aria-pressed="false">
+                  Business Performance</button
+               ><button data-filter="trends" aria-pressed="false">
+                  Trends &amp; Geography</button
+               ><button data-filter="interactive" aria-pressed="false">
+                  Interactive Visualization
+               </button>
+            </div>
+            <div class="search">
+               <input
+                  type="search"
+                  id="search"
+                  aria-label="Search projects or skills"
+                  placeholder="Search projects or skills…"
+               />
+            </div>
+         </div>
+         <div class="collection">
+            <h2>Project Library</h2>
+            <span id="count" role="status" aria-live="polite">9 projects</span>
+         </div>
+         <div class="grid">
+            <!-- Copy an article to add a project. data-topic accepts multiple space-separated group IDs. Replace the unavailable report label with an anchor when its URL is known. -->
+            <article class="card" data-topic="business trends">
+               <a
+                  class="preview"
+                  href="https://marulsnesamony.github.io/Metrics-n-Insights/RetailKPIAnalysis.html"
+                  tabindex="-1"
+                  aria-hidden="true"
+                  ><img
+                     src="https://marulsnesamony.github.io/Metrics-n-Insights/Images/Retail%20Store%20Insights.png"
+                     alt=""
+                     loading="lazy"
+               /></a>
+               <div class="body">
+                  <div class="category">Business Performance &amp; Growth</div>
+                  <h3>
+                     <a
+                        href="https://marulsnesamony.github.io/Metrics-n-Insights/RetailKPIAnalysis.html"
+                        >Retail Store Performance</a
+                     >
+                  </h3>
+                  <p class="description">
+                     Evaluate retail store performance through leading KPIs like Net Revenue per Customer, Product Return rate, Customer Acquistion rate.
+                  </p>
+                  <div class="tags">
+                     <span>Power BI</span><span>Tableau</span><span>Python</span
+                     ><span>Data Modeling</span><span>Retail Metrics</span>
+                  </div>
+                  <a
+                     class="report"
+                     href="https://public.tableau.com/views/RetailStorePerformanceAnalysis_17725012628310/LocationAnalytics"
+                     >Explore Tableau report <span aria-hidden="true">↗</span></a
+                  ><a
+                     class="report code-link"
+                     href="https://github.com/marulsnesamony/Portfolio/blob/main/Data%20Extraction%20Transformation%20Analysis%20Scripts/Global%20Superstore%20-%20Normalized%20Data.ipynb"
+                     >View Python Script <span aria-hidden="true">↗</span></a
+                  >
+                  <details>
+                     <summary>Behind the analysis</summary>
+                     <p>
+                        Used Python to normalize the Sample Superstore dataset into Dimensions and facts. Built a comprehensive Performance dashboard in
+                        Power BI. Location analysis was built in Tableau.
+                     </p>
+                  </details>
+               </div>
+            </article>
+            <article class="card" data-topic="business">
+               <a
+                  class="preview"
+                  href="https://marulsnesamony.github.io/Metrics-n-Insights/CustomerOpportunity.html"
+                  tabindex="-1"
+                  aria-hidden="true"
+                  ><img
+                     src="https://marulsnesamony.github.io/Metrics-n-Insights/Images/Customer%20Opportunity.png"
+                     alt=""
+                     loading="lazy"
+               /></a>
+               <div class="body">
+                  <div class="category">Business Performance &amp; Growth</div>
+                  <h3>
+                     <a
+                        href="https://marulsnesamony.github.io/Metrics-n-Insights/CustomerOpportunity.html"
+                        >Customer Opportunity Analysis</a
+                     >
+                  </h3>
+                  <p class="description">
+                     Analyzed service opportunities with actual sales to identify
+                     gaps in opportunity capture, conversion, and customer
+                     engagement.
+                  </p>
+                  <div class="tags">
+                     <span>Power BI</span><span>Sales analysis</span><span>Opportunity Conversion</span
+                     ><span>Customer Insights</span>
+                  </div>
+                  <details>
+                     <summary>Behind the analysis</summary>
+                     <p>
+                        De-duplicated the data and cleaned the Customer information from 3 different files in Power Query. Analyzed the manufacturer’s service opportunities and
+                        sales, classified Customers based on the identified opportunities and formulated recommendations to support sales strategies and service revenue growth.  
+                     </p>
+                  </details>
+               </div>
+            </article>
+            <article class="card" data-topic="business">
+               <a
+                  class="preview"
+                  href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/GamingVideoInsights/GamingInsights"
+                  tabindex="-1"
+                  aria-hidden="true"
+                  ><img
+                     src="https://marulsnesamony.github.io/Metrics-n-Insights/Images/Youtube%20Channel%20Insights.png"
+                     alt=""
+                     loading="lazy"
+               /></a>
+               <div class="body">
+                  <div class="category">Business Performance &amp; Growth</div>
+                  <h3>
+                     <a
+                        href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/GamingVideoInsights/GamingInsights#1"
+                        >YouTube Channel Insights</a
+                     >
+                  </h3>
+                  <p class="description">
+                     Evaluated audience engagement, content efficiency,
+                     conversion effectiveness, and recurring topics to
+                     understand channel performance.
+                  </p>
+                  <div class="tags">
+                     <span>Tableau</span><span>Python</span
+                     ><span>YouTube Data API</span
+                     ><span>Audience analytics</span>
+                  </div>
+				  <a
+                     class="report code-link"
+                     href="https://github.com/marulsnesamony/Portfolio/blob/main/Data%20Extraction%20Transformation%20Analysis%20Scripts/YoutubeVideoScraping.ipynb"
+                     >View Python Script <span aria-hidden="true">↗</span></a
+                  >
+                  <details>
+                     <summary>Behind the analysis</summary>
+                     <p>
+                        Extracted channel metrics and video performance data
+                        using YouTube Data API, processed the data using
+                        Python, and built an interactive Tableau dashboard to
+                        explore engagement and content reach.
+                     </p>
+                  </details>
+               </div>
+            </article>
+            <article class="card" data-topic="trends">
+               <a
+                  class="preview"
+                  href="https://marulsnesamony.github.io/Metrics-n-Insights/StockPriceAnalysis.html"
+                  tabindex="-1"
+                  aria-hidden="true"
+                  ><img
+                     src="https://marulsnesamony.github.io/Metrics-n-Insights/Images/Stock%20Prices.png"
+                     alt=""
+                     loading="lazy"
+               /></a>
+               <div class="body">
+                  <div class="category">
+                     Trends &amp; Geographic Insights
+                  </div>
+                  <h3>
+                     <a
+                        href="https://marulsnesamony.github.io/Metrics-n-Insights/StockPriceAnalysis.html"
+                        >Stock Prices Analysis</a
+                     >
+                  </h3>
+                  <p class="description">
+                     Tracking performance of few stock prices over a rolling 52 weeks, with 50-day and
+                     200-day moving averages to identify points of "golden cross" and "death cross". 
+                  </p>
+                  <div class="tags">
+                     <span>Power BI</span><span>DAX</span><span>Tableau</span
+                     ><span>Time Series</span>
+                  </div>
+                  <a
+                     class="report"
+                     href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/StockPriceAnalysis_17922777182480/StockPriceAnalysis"
+                     >Explore Tableau report <span aria-hidden="true">↗</span></a
+                  >
+                  <details>
+                     <summary>Behind the analysis</summary>
+                     <p>
+                        <strong>Accurate moving averages.</strong> Power BI - Used the DAX
+                        <code>WINDOW</code> function within
+                        <code>CALCULATE</code> to include historical prices
+                        beyond the displayed period. A separate measure limited
+                        the visual to the latest 52 weeks while preserving the
+                        data needed for the calculations. Tableau - Used table calculation filter to restrict the data points in the visual
+                     </p>
+                     <p>
+                        <strong>Highlighting Maximum and Minimum.</strong> Power BI - Created a
+                        dedicated DAX measure to highlight each company’s
+                        maximum and minimum closing prices within the visible
+                        52-week period. 
+                     </p>
+                  </details>
+               </div>
+            </article>
+            <article class="card" data-topic="trends">
+               <a
+                  class="preview"
+                  href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/USHealthcareDataBreaches/USHealthCareDataBreaches"
+                  tabindex="-1"
+                  aria-hidden="true"
+                  ><img
+                     src="https://marulsnesamony.github.io/Metrics-n-Insights/Images/US%20Healthcare%20Data%20Breaches.png"
+                     alt=""
+                     loading="lazy"
+               /></a>
+               <div class="body">
+                  <div class="category">
+                     Trends &amp; Geographic Insights
+                  </div>
+                  <h3>
+                     <a
+                        href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/USHealthcareDataBreaches/USHealthCareDataBreaches"
+                        >US Healthcare Data Breaches</a
+                     >
+                  </h3>
+                  <p class="description">
+                     Explore breach frequency and methods, identify targeted
+                     parts of the healthcare ecosystem, and locate geographic
+                     hotspots.
+                  </p>
+                  <div class="tags">
+                     <span>Tableau</span><span>Time Series</span
+                     ><span>Geospatial analysis</span>
+                  </div>
+                  <details>
+                     <summary>Behind the analysis</summary>
+                     <p>
+                        Used parameter actions, dynamic filtering, word cloud and Tableau
+                        Stories to create a guided, user-driven narrative about
+                        healthcare data breaches.
+                     </p>
+                  </details>
+               </div>
+            </article>
+            <article class="card" data-topic="trends">
+               <a
+                  class="preview"
+                  href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/Passport_Ranks_16914649641120/WherecanyourPassporttakeyouwithoutaVisa"
+                  tabindex="-1"
+                  aria-hidden="true"
+                  ><img
+                     src="https://marulsnesamony.github.io/Metrics-n-Insights/Images/Visa-free%20Travel%20Destinations.png"
+                     alt=""
+                     loading="lazy"
+               /></a>
+               <div class="body">
+                  <div class="category">
+                     Trends &amp; Geographic Insights
+                  </div>
+                  <h3>
+                     <a
+                        href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/Passport_Ranks_16914649641120/WherecanyourPassporttakeyouwithoutaVisa"
+                        >Visa-free Travel Destinations</a
+                     >
+                  </h3>
+                  <p class="description">
+                     Compare passport access across countries and explore
+                     destinations that can be visited without a prior visa.
+                  </p>
+                  <div class="tags">
+                     <span>Tableau</span><span>Python</span
+                     ><span>Web scraping</span><span>Geospatial analysis</span>
+                  </div>
+				  <a
+                     class="report code-link"
+                     href="https://github.com/marulsnesamony/Portfolio/blob/main/Data%20Extraction%20Transformation%20Analysis%20Scripts/Parsing%20HTML%20files-Country%20Passports.ipynb"
+                     >View Python Script <span aria-hidden="true">↗</span></a
+                  >
+                  <details>
+                     <summary>Behind the analysis</summary>
+                     <p>
+                        Scraped and cleaned HTML data with Python. Built an
+                        interactive Tableau map showing accessible destinations
+                        and travel restrictions for each country’s passport.
+                     </p>
+                  </details>
+               </div>
+            </article>
+            <article class="card" data-topic="trends">
+               <a
+                  class="preview"
+                  href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/Bio-DiversityinUSNationalParks_16118920215570/WOW202104"
+                  tabindex="-1"
+                  aria-hidden="true"
+                  ><img
+                     src="https://marulsnesamony.github.io/Metrics-n-Insights/Images/Bio-diversity%20in%20National%20Parks.png"
+                     alt=""
+                     loading="lazy"
+               /></a>
+               <div class="body">
+                  <div class="category">
+                     Trends &amp; Geographic Insights
+                  </div>
+                  <h3>
+                     <a
+                        href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/Bio-DiversityinUSNationalParks_16118920215570/WOW202104"
+                        >Bio-diversity in National Parks</a
+                     >
+                  </h3>
+                  <p class="description">
+                     Explore the distribution of flora and fauna across mainland
+                     U.S. National Parks, from species categories to habitats
+                     and density.
+                  </p>
+                  <div class="tags">
+                     <span>Tableau</span><span>Map layers</span
+                     ><span>Geospatial analysis</span>
+                  </div>
+                  <details>
+                     <summary>Behind the analysis</summary>
+                     <p>
+                        Used map layers and dynamic highlighting to navigate
+                        plants, animals, birds, and other species categories
+                        while exploring habitats and density across the park
+                        system.
+                     </p>
+                  </details>
+               </div>
+            </article>
+            <article class="card" data-topic="interactive">
+               <a
+                  class="preview"
+                  href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/Waterfall_16873015776350/MultipleLevels"
+                  tabindex="-1"
+                  aria-hidden="true"
+                  ><img
+                     src="https://marulsnesamony.github.io/Metrics-n-Insights/Images/Custom%20Waterfall%20Visual.png"
+                     alt=""
+                     loading="lazy"
+               /></a>
+               <div class="body">
+                  <div class="category">
+                     Advanced Visualization &amp; Interactive Experiences
+                  </div>
+                  <h3>
+                     <a
+                        href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/Waterfall_16873015776350/MultipleLevels"
+                        >Custom Waterfall Visual</a
+                     >
+                  </h3>
+                  <p class="description">
+                     Explore a custom waterfall chart with multiple levels and
+                     dynamically selected categories.
+                  </p>
+                  <div class="tags">
+                     <span>Tableau</span><span>EXCLUDE LODs</span
+                     ><span>Custom visualization</span>
+                  </div>
+                  <details>
+                     <summary>Behind the analysis</summary>
+                     <p>
+                        Tableau doesn't have out of the box Waterfall visual. Created a custom one by manipulating data granularity, measure filters, and
+                        EXCLUDE level-of-detail expressions to build the 
+                        visual with dynamic levels and categories.
+                     </p>
+                  </details>
+               </div>
+            </article>
+            <article class="card" data-topic="interactive">
+               <a
+                  class="preview"
+                  href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/EscapeRoomEPLPremierLeague/EPL"
+                  tabindex="-1"
+                  aria-hidden="true"
+                  ><img
+                     src="https://marulsnesamony.github.io/Metrics-n-Insights/Images/Virtual%20Escape%20room.png"
+                     alt=""
+                     loading="lazy"
+               /></a>
+               <div class="body">
+                  <div class="category">
+                     Advanced Visualization &amp; Interactive Experiences
+                  </div>
+                  <h3>
+                     <a
+                        href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/EscapeRoomEPLPremierLeague/EPL"
+                        >Virtual Escape Room</a
+                     >
+                  </h3>
+                  <p class="description">
+                     Soccer's English Premier League themed, data-driven trivia
+                     challenges in an interactive digital escape room.
+                  </p>
+                  <div class="tags">
+                     <span>Tableau</span><span>Python</span
+                     ><span>Interactive design</span>
+                  </div>
+				  <a
+                     class="report code-link"
+                     href="https://github.com/marulsnesamony/Portfolio/blob/main/Data%20Extraction%20Transformation%20Analysis%20Scripts/EPL%20-%20Data%20Cleaning%20and%20Transformation.ipynb"
+                     >View Python Script <span aria-hidden="true">↗</span></a
+                  >
+                  <details>
+                     <summary>Behind the analysis</summary>
+                     <p>
+                        Combined parameter actions, navigation, dynamic
+                        reference lines, and custom shapes to turn Tableau into
+                        a gaming environment, supported by Python-refined
+                        datasets.
+                     </p>
+                  </details>
+               </div>
+            </article>
+         </div>
+         <p class="empty" id="empty" hidden>
+            No matching projects. Try another search or select All projects.
+         </p>
+         <footer>
+            <span>Marul Nesamony · Data Analytics Portfolio</span
+         </footer>
+      </main>
+      <script>
+         const cards = [...document.querySelectorAll(".card")],
+            buttons = [...document.querySelectorAll("[data-filter]")],
+            search = document.querySelector("#search");
+         let topic = "all";
+         function filter() {
+            const q = search.value.trim().toLowerCase();
+            let count = 0;
+            cards.forEach((card) => {
+               const match =
+                  (topic === "all" ||
+                     card.dataset.topic.split(" ").includes(topic)) &&
+                  card.textContent.toLowerCase().includes(q);
+               card.hidden = !match;
+               if (match) count++;
+            });
+            document.querySelector("#count").textContent =
+               count + " of " + cards.length + " projects";
+            document.querySelector("#empty").hidden = count !== 0;
+         }
+         buttons.forEach((button) =>
+            button.addEventListener("click", () => {
+               topic = button.dataset.filter;
+               buttons.forEach((b) =>
+                  b.setAttribute("aria-pressed", String(b === button)),
+               );
+               filter();
+            }),
+         );
+         search.addEventListener("input", filter);
+         filter();
+      </script>
+   </body>
 </html>
-
