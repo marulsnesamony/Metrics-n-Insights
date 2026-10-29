@@ -83,7 +83,7 @@
             justify-content: space-between;
             gap: 16px;
             flex-wrap: wrap;
-            margin: 28px 0 20px;
+            margin: 14px 0 12px;
          }
          .filters {
             display: flex;
@@ -375,6 +375,48 @@
             padding-top: 12px;
             font-weight: 500;
          }
+         /* Tool logos are loaded from the portfolio GitHub image folder. */
+         .hero {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            margin: 4px 0 0;
+            padding: 10px 24px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: linear-gradient(120deg, #ffffff, #eaf4f3);
+         }
+         .hero::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: 0 24px 0 58%;
+            height: auto;
+            background-image: url("https://raw.githubusercontent.com/marulsnesamony/Metrics-n-Insights/main/Images/Tableau.png"),
+               url("https://raw.githubusercontent.com/marulsnesamony/Metrics-n-Insights/main/Images/PowerBI.png"),
+               url("https://raw.githubusercontent.com/marulsnesamony/Metrics-n-Insights/main/Images/SQL.png"),
+               url("https://raw.githubusercontent.com/marulsnesamony/Metrics-n-Insights/main/Images/Python.png"),
+               url("https://raw.githubusercontent.com/marulsnesamony/Metrics-n-Insights/main/Images/Databricks.jpg"),
+               url("https://raw.githubusercontent.com/marulsnesamony/Metrics-n-Insights/main/Images/Snowflake.jpg");
+            background-position: 0% center, 20% center, 40% center, 60% center, 80% center, 100% center;
+            background-size: 38px 38px;
+            background-repeat: no-repeat;
+            opacity: 1;
+
+            pointer-events: none;
+         }
+         .hero h1 { margin: 0 0 6px; }
+         .hero h1, .hero .intro { max-width: 54%; }
+         @media (max-width: 620px) {
+            .hero { padding: 10px 16px; }
+            .hero h1, .hero .intro { max-width: 62%; }
+            .hero::before { opacity: 1; }
+            .hero::before {
+               inset: 0 10px 0 66%;
+               height: auto;
+               background-size: 16px 16px;
+            }
+         }
       </style>
    </head>
    <body>
@@ -393,11 +435,13 @@
          </div>
       </header>
       <main>
+         <section class="hero" aria-label="Introduction">
          <h1>A closer look at the data</h1>
          <p class="intro">
             Explore interactive reports, business insights, and the thinking
             behind each project.
          </p>
+         </section>
          <div class="tools">
             <div
                class="filters"
