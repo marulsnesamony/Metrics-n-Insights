@@ -376,7 +376,7 @@
             font-weight: 500;
          }
          /* Tool logos are loaded from the portfolio GitHub image folder. */
-         .hero {
+         .toollogo {
             position: relative;
             isolation: isolate;
             overflow: hidden;
@@ -386,7 +386,7 @@
             border-radius: 16px;
             background: linear-gradient(120deg, #ffffff, #eaf4f3);
          }
-         .hero::before {
+         .toollogo::before {
             content: "";
             position: absolute;
             z-index: -1;
@@ -399,22 +399,22 @@
                url("https://raw.githubusercontent.com/marulsnesamony/Metrics-n-Insights/main/Images/Databricks.jpg"),
                url("https://raw.githubusercontent.com/marulsnesamony/Metrics-n-Insights/main/Images/Snowflake.jpg");
             background-position: 0% center, 20% center, 40% center, 60% center, 80% center, 100% center;
-            background-size: 38px 38px;
+            background-size: 30.4px 30.4px;
             background-repeat: no-repeat;
             opacity: 1;
 
             pointer-events: none;
          }
-         .hero h1 { margin: 0 0 6px; }
-         .hero h1, .hero .intro { max-width: 54%; }
+         .toollogo h1 { margin: 0 0 6px; }
+         .toollogo h1, .toollogo .intro { max-width: 54%; }
          @media (max-width: 620px) {
-            .hero { padding: 10px 16px; }
-            .hero h1, .hero .intro { max-width: 62%; }
-            .hero::before { opacity: 1; }
-            .hero::before {
+            .toollogo { padding: 10px 16px; }
+            .toollogo h1, .toollogo .intro { max-width: 62%; }
+            .toollogo::before { opacity: 1; }
+            .toollogo::before {
                inset: 0 10px 0 66%;
                height: auto;
-               background-size: 16px 16px;
+               background-size: 12.8px 12.8px;
             }
          }
       </style>
@@ -435,7 +435,7 @@
          </div>
       </header>
       <main>
-         <section class="hero" aria-label="Introduction">
+         <section class="toollogo" aria-label="Introduction">
          <h1>A closer look at the data</h1>
          <p class="intro">
             Explore interactive reports, business insights, and the thinking
@@ -457,6 +457,15 @@
                ><button data-filter="interactive" aria-pressed="false">
                   Interactive Visualization
                </button>
+			   <button data-filter="tableau" aria-pressed="false">
+                  Tableau
+               </button>
+			   <button data-filter="bi" aria-pressed="false">
+                  Power BI
+               </button>
+			   <button data-filter="python" aria-pressed="false">
+                  Python
+               </button>
             </div>
             <div class="search">
                <input
@@ -473,7 +482,7 @@
          </div>
          <div class="grid">
             <!-- Copy an article to add a project. data-topic accepts multiple space-separated group IDs. Replace the unavailable report label with an anchor when its URL is known. -->
-            <article class="card" data-topic="business trends">
+            <article class="card" data-topic="business trends tableau bi python">
                <a
                   class="preview"
                   href="https://marulsnesamony.github.io/Metrics-n-Insights/RetailKPIAnalysis.html"
@@ -497,7 +506,7 @@
                   </p>
                   <div class="tags">
                      <span>Power BI</span><span>Tableau</span><span>Python</span
-                     ><span>Data Modeling</span><span>Retail Metrics</span>
+                     ><span>Data Modeling</span><span>Retail Metrics</span><span>Geospatial analysis</span>
                   </div>
                   <a
                      class="report"
@@ -517,7 +526,7 @@
                   </details>
                </div>
             </article>
-            <article class="card" data-topic="business">
+            <article class="card" data-topic="business bi">
                <a
                   class="preview"
                   href="https://marulsnesamony.github.io/Metrics-n-Insights/CustomerOpportunity.html"
@@ -554,7 +563,7 @@
                   </details>
                </div>
             </article>
-            <article class="card" data-topic="interactive">
+            <article class="card" data-topic="interactive tableau">
                <a
                   class="preview"
                   href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/Waterfall_16873015776350/MultipleLevels"
@@ -581,7 +590,7 @@
                   </p>
                   <div class="tags">
                      <span>Tableau</span><span>EXCLUDE LODs</span
-                     ><span>Custom visualization</span>
+                     ><span>Custom visualization</span><span>Data Modeling</span>
                   </div>
                   <details>
                      <summary>Behind the analysis</summary>
@@ -593,7 +602,7 @@
                   </details>
                </div>
             </article>
-            <article class="card" data-topic="interactive">
+            <article class="card" data-topic="interactive tableau python">
                <a
                   class="preview"
                   href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/EscapeRoomEPLPremierLeague/EPL"
@@ -620,7 +629,7 @@
                   </p>
                   <div class="tags">
                      <span>Tableau</span><span>Python</span
-                     ><span>Interactive design</span>
+                     ><span>Interactive design</span><span>Dynamic Zone Visibility</span>
                   </div>
 				  <a
                      class="report code-link"
@@ -638,7 +647,7 @@
                   </details>
                </div>
             </article>
-            <article class="card" data-topic="business">
+            <article class="card" data-topic="business tableau python">
                <a
                   class="preview"
                   href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/GamingVideoInsights/GamingInsights"
@@ -683,7 +692,7 @@
                   </details>
                </div>
             </article>
-            <article class="card" data-topic="trends">
+            <article class="card" data-topic="trends bi tableau">
                <a
                   class="preview"
                   href="https://marulsnesamony.github.io/Metrics-n-Insights/StockPriceAnalysis.html"
@@ -709,8 +718,8 @@
                      200-day moving averages to identify points of "golden cross" and "death cross". 
                   </p>
                   <div class="tags">
-                     <span>Power BI</span><span>DAX</span><span>Tableau</span
-                     ><span>Time Series</span>
+                     <span>Power BI</span><span>Tableau</span
+                     ><span>Time Series</span><span>Moving Averages</span><span>Rolling Periods</span>
                   </div>
                   <a
                      class="report"
@@ -736,7 +745,7 @@
                   </details>
                </div>
             </article>
-            <article class="card" data-topic="trends">
+            <article class="card" data-topic="trends tableau">
                <a
                   class="preview"
                   href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/USHealthcareDataBreaches/USHealthCareDataBreaches"
@@ -764,7 +773,7 @@
                   </p>
                   <div class="tags">
                      <span>Tableau</span><span>Time Series</span
-                     ><span>Geospatial analysis</span>
+                     ><span>Geospatial analysis</span><span>Word Cloud</span>
                   </div>
                   <details>
                      <summary>Behind the analysis</summary>
@@ -776,7 +785,7 @@
                   </details>
                </div>
             </article>
-            <article class="card" data-topic="trends">
+            <article class="card" data-topic="trends tableau python">
                <a
                   class="preview"
                   href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/Passport_Ranks_16914649641120/WherecanyourPassporttakeyouwithoutaVisa"
@@ -820,7 +829,7 @@
                   </details>
                </div>
             </article>
-            <article class="card" data-topic="trends">
+            <article class="card" data-topic="trends tableau">
                <a
                   class="preview"
                   href="https://public.tableau.com/app/profile/marul.s.nesamony/viz/Bio-DiversityinUSNationalParks_16118920215570/WOW202104"
