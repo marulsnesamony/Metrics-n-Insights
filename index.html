@@ -196,11 +196,11 @@
          }
          .report {
             border-top: 1px solid var(--line);
-            padding-top: 14px;
+            padding-top: 8px;
             display: flex;
             justify-content: space-between;
             color: var(--teal);
-            font-size: 13px;
+            font-size: 11.5px;
             font-weight: 650;
             text-decoration: none;
          }
@@ -208,19 +208,28 @@
             text-decoration: underline;
          }
          details {
+            line-height: 1.15;
             border-top: 1px solid var(--line);
-            margin-top: 15px;
-            padding-top: 12px;
-            font-size: 12px;
+            margin-top: 8px;
+            padding-top: 8px;
+            font-size: 10px;
             color: var(--muted);
          }
          summary {
+            font-size: 11.5px;
             color: var(--ink);
             font-weight: 600;
             cursor: pointer;
          }
          details p {
             margin: 10px 0 0;
+         }
+         details ul {
+            margin: 0;
+            padding-left: 20px;
+         }
+         details li {
+            margin: 4px 0 0;
          }
          code {
             background: #eef3f4;
@@ -371,8 +380,8 @@
             }
          }
          .code-link {
-            margin-top: 12px;
-            padding-top: 12px;
+            margin-top: 8px;
+            padding-top: 8px;
             font-weight: 500;
          }
          /* Tool logos are loaded from the portfolio GitHub image folder. */
@@ -519,10 +528,12 @@
                   >
                   <details>
                      <summary>Behind the analysis</summary>
-                     <p>
-                        Used Python to normalize the Sample Superstore dataset into Dimensions and facts. Built a comprehensive Performance dashboard in
-                        Power BI. Location analysis was built in Tableau.
-                     </p>
+                     <ul>
+                        <li>Used Python to normalize the Sample Superstore dataset into Dimensions and facts.</li>
+                        <li>Built a comprehensive Performance dashboard in
+                        Power BI.</li>
+                        <li>Location analysis was built in Tableau.</li>
+                     </ul>
                   </details>
                </div>
             </article>
@@ -556,10 +567,11 @@
                   </div>
                   <details>
                      <summary>Behind the analysis</summary>
-                     <p>
-                        De-duplicated the data and cleaned the Customer information from 3 different files in Power Query. Analyzed the manufacturer’s service opportunities and
-                        sales, classified Customers based on the identified opportunities and formulated recommendations to support sales strategies and service revenue growth.  
-                     </p>
+                     <ul>
+                        <li>De-duplicated the data and cleaned the Customer information from 3 different files in Power Query.</li>
+                        <li>Analyzed the manufacturer’s service opportunities and
+                        sales, classified Customers based on the identified opportunities and formulated recommendations to support sales strategies and service revenue growth.</li>
+                     </ul>
                   </details>
                </div>
             </article>
@@ -594,11 +606,12 @@
                   </div>
                   <details>
                      <summary>Behind the analysis</summary>
-                     <p>
-                        Tableau doesn't have out of the box Waterfall visual. Created a custom one by manipulating data granularity, measure filters, and
+                     <ul>
+                        <li>Tableau doesn't have out of the box Waterfall visual.</li>
+                        <li>Created a custom one by manipulating data granularity, measure filters, and
                         EXCLUDE level-of-detail expressions to build the 
-                        visual with dynamic levels and categories.
-                     </p>
+                        visual with dynamic levels and categories.</li>
+                     </ul>
                   </details>
                </div>
             </article>
@@ -638,12 +651,12 @@
                   >
                   <details>
                      <summary>Behind the analysis</summary>
-                     <p>
-                        Combined parameter actions, navigation, dynamic
+                     <ul>
+                        <li>Combined parameter actions, navigation, dynamic
                         reference lines, and custom shapes to turn Tableau into
                         a gaming environment, supported by Python-refined
-                        datasets.
-                     </p>
+                        datasets.</li>
+                     </ul>
                   </details>
                </div>
             </article>
@@ -683,12 +696,12 @@
                   >
                   <details>
                      <summary>Behind the analysis</summary>
-                     <p>
-                        Extracted channel metrics and video performance data
+                     <ul>
+                        <li>Extracted channel metrics and video performance data
                         using YouTube Data API, processed the data using
                         Python, and built an interactive Tableau dashboard to
-                        explore engagement and content reach.
-                     </p>
+                        explore engagement and content reach.</li>
+                     </ul>
                   </details>
                </div>
             </article>
@@ -728,20 +741,18 @@
                   >
                   <details>
                      <summary>Behind the analysis</summary>
-                     <p>
-                        <strong>Accurate moving averages.</strong> Power BI - Used the DAX
+                     <ul>
+                        <li><strong>Accurate moving averages.</strong> Power BI - Used the DAX
                         <code>WINDOW</code> function within
                         <code>CALCULATE</code> to include historical prices
                         beyond the displayed period. A separate measure limited
                         the visual to the latest 52 weeks while preserving the
-                        data needed for the calculations. Tableau - Used table calculation filter to restrict the data points in the visual
-                     </p>
-                     <p>
-                        <strong>Highlighting Maximum and Minimum.</strong> Power BI - Created a
+                        data needed for the calculations. Tableau - Used table calculation filter to restrict the data points in the visual</li>
+                        <li><strong>Highlighting Maximum and Minimum.</strong> Power BI - Created a
                         dedicated DAX measure to highlight each company’s
                         maximum and minimum closing prices within the visible
-                        52-week period. 
-                     </p>
+                        52-week period.</li>
+                     </ul>
                   </details>
                </div>
             </article>
@@ -777,11 +788,11 @@
                   </div>
                   <details>
                      <summary>Behind the analysis</summary>
-                     <p>
-                        Used parameter actions, dynamic filtering, word cloud and Tableau
+                     <ul>
+                        <li>Used parameter actions, dynamic filtering, word cloud and Tableau
                         Stories to create a guided, user-driven narrative about
-                        healthcare data breaches.
-                     </p>
+                        healthcare data breaches.</li>
+                     </ul>
                   </details>
                </div>
             </article>
@@ -821,11 +832,12 @@
                   >
                   <details>
                      <summary>Behind the analysis</summary>
-                     <p>
-                        Scraped and cleaned HTML data with Python. Built an
+                     <ul>
+                        <li>Scraped and cleaned HTML data with Python.</li>
+                        <li>Built an
                         interactive Tableau map showing accessible destinations
-                        and travel restrictions for each country’s passport.
-                     </p>
+                        and travel restrictions for each country’s passport.</li>
+                     </ul>
                   </details>
                </div>
             </article>
@@ -861,12 +873,12 @@
                   </div>
                   <details>
                      <summary>Behind the analysis</summary>
-                     <p>
-                        Used map layers and dynamic highlighting to navigate
+                     <ul>
+                        <li>Used map layers and dynamic highlighting to navigate
                         plants, animals, birds, and other species categories
                         while exploring habitats and density across the park
-                        system.
-                     </p>
+                        system.</li>
+                     </ul>
                   </details>
                </div>
             </article>
