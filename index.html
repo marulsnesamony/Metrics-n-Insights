@@ -742,16 +742,27 @@
                   <details>
                      <summary>Behind the analysis</summary>
                      <ul>
-                        <li><strong>Accurate moving averages.</strong> Power BI - Used the DAX
-                        <code>WINDOW</code> function within
-                        <code>CALCULATE</code> to include historical prices
-                        beyond the displayed period. A separate measure limited
-                        the visual to the latest 52 weeks while preserving the
-                        data needed for the calculations. Tableau - Used table calculation filter to restrict the data points in the visual</li>
-                        <li><strong>Highlighting Maximum and Minimum.</strong> Power BI - Created a
-                        dedicated DAX measure to highlight each company’s
-                        maximum and minimum closing prices within the visible
-                        52-week period.</li>
+                        <li><strong>Accurate moving averages.</strong> 
+							<ul>
+							<li><strong>Power BI</strong> Used the DAX
+							<code>WINDOW</code> function within
+							<code>CALCULATE</code> to include historical prices
+							beyond the displayed period. A separate measure limited
+							the visual to the latest 52 weeks while preserving the
+							data needed for the calculations.</li> 
+							<li><strong>Tableau</strong> Used table calculation filter to restrict the data points in the visual
+							</li>
+							</ul>
+						</li>
+                        <li><strong>Highlighting Maximum and Minimum.</strong> 
+							<ul>
+							<li><strong>Power BI</strong> Created a
+							dedicated DAX measure to highlight each company’s
+							maximum and minimum closing prices within the visible
+							52-week period.
+							</li>
+							</ul>
+						</li>
                      </ul>
                   </details>
                </div>
